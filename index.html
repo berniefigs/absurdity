@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" >
+<meta charset="UTF-8">
+  <title>OVERSHARING</title>
+<head>
+<style>
+ body {
+  	background: url(curtain.jpg) no-repeat center center fixed;
+	background-size: 100% 100%;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+a {color: green;
+background: none;}
+a:hover {background: yellow;}
+* {
+	padding:0px;
+	margin:0px;
+}
+
+.one, .two {
+	position: relative;
+  	text-align: center;
+	margin-left: 5%;
+	margin-bottom: 6%;
+}
+
+img{
+	position: relative;
+  	text-align: center;
+	width: 55vw; 
+}
+
+.overshare2 {
+	background-color: black;
+}
+
+.overshare {
+	background-color: green;
+}
+
+.overshare, .overshare2 {
+	font-family: 'Inter', sans-serif;
+	color: white;
+	border-radius: 12px;
+	text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  	margin: 4px 2px;
+  	padding: 10px;
+}
+
+.two {
+	color: white;
+}
+
+.meow, .meow2 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-family: 'Inter', sans-serif;
+	font-size: 3vw;
+	text-transform: uppercase;
+	color: white;
+	text-shadow: 2px 4px 4px #000000;
+	letter-spacing: 1px;
+}
+
+.title {
+	font-weight: normal;
+  	font-size: 4vw;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+  
+.toggle {
+	top: 15px;
+	left: 30px;
+	position: relative;
+	padding-bottom: 3%;
+}
+	
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: green;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: black;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px white;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* modal */ 
+  .rotate {
+  animation: rotation 2s;
+}
+
+.linear {
+  animation-timing-function: linear;
+}
+
+.infinite {
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.clown {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: black;
+  margin: auto;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 20%;
+  border: none;
+  width: 80%;
+  font-family: 'Inter', sans-serif;
+  font-size: 4vw;
+  color: white;
+  text-align: justify;
+}
+
+/* The Close Button */
+.close {
+  color: #ccc;
+  float: top;
+  top: 0;
+  font-size: 5vw;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: green;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+	<button class="clown" id="myBtn"><img class="rotate linear infinite" style="width: 9vw;" src="clown.png"></button>
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>memes were originally conceptualized as units of cultural transfer, coined by <a target=_blank href="https://richarddawkins.net/2014/02/whats-in-a-meme/">richard dawkins in 1976</a>, but the internet 
+   gave it an entirely different meaning. internet memes are cultural ideas that have been
+   reinvented by human creativity, a contagious idea. humans have a tendency of being a part of something bigger
+than themselves. memes are a reflection of your cleverness, intellect, and worldly knowledge.
+what i find fascinating about memes is that people feel freer to flirt with the taboos due to <a target=_blank href="https://en.wikipedia.org/wiki/Online_disinhibition_effect">the
+online disinhibition effect</a>, coined by john suler. there's no social consequences in making memes, but memes help get statements across, conversations started. <br> <br>
+for this project, i've created two different kinds of meme generators. personal/general. the 
+personal meme generator, is obviously a gateway into the way i think, while crossing the lines between oversharing and what's generally socially acceptable to share. i find being brutally honest so relieving. <br><br> the general meme generator kind of works as a critique on the 21st century in the most vaguest sense, through dark humor of course. got to make it digestable somehow! <br><br> the site is set up like the theatre, as if we all have <a target=_blank href="https://www.amazon.com/Presentation-Self-Everyday-Life/dp/0385094027">a performed social self</a>. as much as we believe we are rugged individuals, releasing our will out into the world
+we are exisential beings, animating the multitude of selves ready made by society to fill the social roles in our lives in the context of a captialist society.</p>
+  </div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+
+
+<div class="toggle">
+	<label class="switch">
+  		<input type="checkbox" onclick="toggle_visibility('id1', 'id2');">
+ 			<span class="slider round"></span>
+	</label>
+</div>
+
+<div id="id1">
+<div class="one">
+	<h1 class="title" style="color: white">
+		<span style="background-color: green">PERSONAL WORD VOMIT</span></h1> 
+			 <br>
+			 <br>
+				<div id="result" class="image"> </div>   
+						<p id="text" class="meow"> </p>  
+						<button class="overshare" type="submit" onclick="callTwoOtherFunctions()">Click me!</button>
+
+<script>
+   function callTwoOtherFunctions(){
+      personal();
+      general();
+   }
+
+   function personal(){
+   var randomImage = new Array();  
+  
+   randomImage[0] = "doll.jpg";  
+   randomImage[1] = "fire.jpg";  
+   randomImage[2] = "scream.jpg";  
+   randomImage[3] = "scream2.jpg"; 
+   randomImage[4] = "pug.jpg";
+   randomImage[5] = "ice.jpg"; 
+   randomImage[6] = "sculp.jpg";  
+   randomImage[7] = "clown.jpg"; 
+   randomImage[8] = "rawr.jpg"; 
+   randomImage[9] = "shame.jpg"; 
+   randomImage[10] = "think.jpg"; 
+   randomImage[11] = "pain.jpg";  
+  
+   var number = Math.floor(Math.random()*randomImage.length);  
+  
+   return document.getElementById("result").innerHTML = '<img src="'+randomImage[number]+'" />';}
+
+   function general(){
+   var randomText = new Array();  
+
+   randomText[0] = "*FALLS BEHIND CODING COURSE* *DOES WEB DEV FOR A LIVING* <BR> HAHA SKOOL IS HARD";  
+   randomText[1] = "*BOYFRIEND LIKES HOT GIRLS PHOTOS* <br> *FEELS NOTHING BUT RAGE*";  
+   randomText[2] = "GROWING UP WITH NARCISSISTIC PARENTS BE LIKE: <br> YOU’LL NEVER BE ENOUGH :(";  
+   randomText[3] = "S/O 2 MY PARENTS INVALDATING ME MY WHOLE LIFE";  
+   randomText[4] = "WISH I COULD BE DUMB AND HAPPY LIKE THE REST OF MY PEERS";  
+   randomText[5] = "ONCE I LEARN HEALTHY COPING MECHANISMS.. <br><br> IT'S OVER 4 DEEZ HOES"; 
+   randomText[6] = "MY PASSION IS DISAPPOINTING OTHERS";
+   randomText[7] = "INVALDATION IS MY PENETRATION"; 
+   randomText[8] = "MANIFESTING LARRY DAVID TO WIFE ME";  
+   randomText[9] = "WHY WORK HARD AND GET GRAY HAIRS WHEN I CAN OBJECTIFY MYSELF TO PLEASE A MAN SO HE GIVES ME MONIES?";  
+   randomText[10] = "*HAS HIGH EXPECTATIONS FOR SELF* *SELF LOATHES TO THE POINT OF EXHAUSTION*";  
+   randomText[11] = "MAJORITY OF MY FRIENDS ARE DEAD AUTHORS";  
+   randomText[12] = "I FIND COMFORT IN NOT SPEAKING TO ANYONE FOR DAYS"; 
+   randomText[13] = "SILENCE IS SO HOT <br> SHUT THE FUCK UP"; 
+   randomText[14] = "MAYBE I SHOULD SHOW MORE SKIN <BR> SO PEOPLE CAN FIND ME MORE INTERESTING";  
+    randomText[15] = "FEARFUL AVOIDANTS BE LIKE: <br> <br> ...... .......";  
+    randomText[16] = "DEPRESSION IS STOOPID <br><br> Y AM I GLUED TO MY BED"; 
+
+	 
+   var number = Math.floor(Math.random()*randomText.length);  
+   return document.getElementById("text").innerHTML = '<p>'+randomText[number]+'</p>';}
+</script> <br><br>
+</div></div>
+
+<div id="id2" style="display: none">
+<div class="two">
+	<h1 class="title"><span style="background-color: black">GENERAL WORD VOMIT</span></h1>
+	<br>
+	<br>
+				<div id="result2" class="image2"> </div>   
+						<p id="text2" class="meow2"> </p>  
+						<button class="overshare2" type="submit" onclick="callTwoOtherFunctions2()">Click me!</button>
+
+<script>
+   function callTwoOtherFunctions2(){
+      personal2();
+      general2();
+   }
+
+   function personal2(){
+   var randomImage2 = new Array();  
+  
+   randomImage2[0] = "diet.png";  
+   randomImage2[1] = "flatearth.jpg";  
+   randomImage2[2] = "mass.png";  
+   randomImage2[3] = "neura.jpg";  
+   randomImage2[4] = "obese.jpg";  
+   randomImage2[5] = "trash.jpg"; 
+   randomImage2[6] = "trump.jpg";  
+   randomImage2[7] = "pedo.jpg"; 
+   randomImage2[8] = "ewxan.png";  
+   randomImage2[9] = "kim.jpg";  
+  
+   var number = Math.floor(Math.random()*randomImage2.length);  
+  
+   return document.getElementById("result2").innerHTML = '<img src="'+randomImage2[number]+'"/>';}
+
+   function general2(){
+   var randomText2 = new Array();  
+
+   randomText2[0] = "LET ME USE NEW WAVE FEMINISM AS AN EXCUSE TO POSE NUDE ONLINE OPENLY";  
+   randomText2[1] = "PLASTIC SURGERY IS THE NEW BASIS FOR BEAUTY";
+   randomText2[2] = "I <3 MY BLACK FLOATING BOX";  
+   randomText2[3] = "SOCIAL MEDIA: CHECKING UP ON UNINTERESTING PEOPLE ON A DAILY BASIS";  
+   randomText2[4] = "BRAIN MUSH <br> <br> EVERYTHING’S FINE";  
+   randomText2[5] = "HAHA POLTICS? <br> <br> IDK BUT LOOK AT THIS SELFIE"; 
+   randomText2[6] = "SOME HAVE TECH NECK, SOME ARE JUST GOOD AT CONFIGURING THEIR BEST ANGLE";
+   randomText2[7] = "PLUS SIZE MODELS OR NORMALIZING OBESITY?"; 
+   randomText2[8] = "WHY STAND OUT, WHEN YOU CAN FIT IN";  
+   randomText2[9] = "PARALYSIS BY ANALYSIS";  
+   randomText2[10] = "HOOK UP CULTURE IS THE BASIS OF STARTING A COMITTED RELATIONSHIP";  
+   randomText2[11] = "I SETTLE FOR LESS B/C I REFUSE TO ACKNOWLEDGE MY WORTH";  
+   randomText2[12] = "CAN YOU STILL INFLUENCE WHEN YOU BECOME OLD AND SAGGY?";  
+   randomText2[13] = "IGNORANCE IS BLISS BECAUSE USING MY BRAIN HURTS OUCHIE OUCHIE";
+   randomText2[14] = "INFORMATION OVERLOAD AKA NEED E-CIG TO REGNENERATE ENERGY FOR MUNDANE TASKS";  
+   randomText2[15] = "I ASPIRE TO HAVE NOTHING BUT CLOUT";  
+   randomText2[16] = "INSTANT GRATIFICATION <br> IS MY SAVIOR"; 
+   randomText2[17] = "HMU IF YOU HAVE A PLUG FOR DOPAMINE"; 
+   randomText2[17] = "I SHOULD WRITE A SELF HELP BOOK ON SELF DESTRUCTION #HOTMESS";  
+
+   var number = Math.floor(Math.random()*randomText2.length);  
+   return document.getElementById("text2").innerHTML = '<p>'+randomText2[number]+'</p>';}
+</script> <br><br>
+</div></div>
+
+<script  src="./script.js"></script>
+</body>
+</html>
